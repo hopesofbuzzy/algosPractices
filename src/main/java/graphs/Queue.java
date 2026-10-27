@@ -4,11 +4,11 @@ public class Queue {
     private Node head;
     private Node tail;
 
-    boolean isEmpty() {
+    public boolean isEmpty() {
         return head == null;
     }
 
-    void enqueue(int val) {
+    public void enqueue(int val) {
         Node node = new Node(val, null);
         if (head == null) {
             head = node;
@@ -18,7 +18,7 @@ public class Queue {
         tail = node;
     }
 
-    int dequeue() {
+    public int dequeue() {
         if (isEmpty()) {
             throw new IllegalStateException("queue is empty");
         }

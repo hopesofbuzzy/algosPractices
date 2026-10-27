@@ -21,7 +21,6 @@ public class Kruskal {
         // Кол-во рёбер = кол-во вершин - 1
         for (Edge edge : edges) {
             // from to
-            
         }
     }
 }

@@ -31,9 +31,9 @@ public class Task2 {
         }
         int[] result = new int[a.length];
 //        for (int i = a.length - 1; i >= 0; i--) {
-        for (int i = 0; i < a.length; i++) {
-            int digit = (a[i] / place) % 10;
-            result[--count[digit]] = a[i];
+        for (int val : a) {
+            int digit = (val / place) % 10;
+            result[--count[digit]] = val;
         }
         System.arraycopy(result, 0, a, 0, a.length);
     }

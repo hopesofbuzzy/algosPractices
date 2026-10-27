@@ -1,7 +1,7 @@
 package practice1;
 import java.util.*;
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
+
 public class BubbleSort {
     static void main() {
         printArray(new int[] {1, 2, 3});

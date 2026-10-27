@@ -2,7 +2,7 @@ package graphs;
 
 public class DFS {
 
-    static boolean[] search(Graph graph, int start) {
+    public static boolean[] search(Graph graph, int start) {
         boolean[] visited = new boolean[graph.vertexCount()];
         Stack stack = new Stack();
         stack.push(start);
