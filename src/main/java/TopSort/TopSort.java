@@ -15,11 +15,10 @@ public class TopSort {
         graph.addEdge(2, 3, 0);
         graph.addEdge(2, 4, 0);
 //        boolean[] result = DFS.search(graph, 3);
-//        System.out.println(Arrays.toString(result));
-        sort(graph);
+        System.out.println(Arrays.toString(sort(graph)));
     }
 
-    public static void sort(Graph graph) {
+    public static int[] sort(Graph graph) {
         int[] inDegree = new int[graph.vertexCount()];
         for (int i = 0; i < graph.vertexCount(); i++) {
             System.out.printf("Вершина %d \n", i);
@@ -37,9 +36,10 @@ public class TopSort {
 
         // Результирующий массив
         int[] order = new int[graph.vertexCount()];
-
+        int index = 1;
         while (!queue.isEmpty()) {
             int current = queue.dequeue();
+            order[current] = index++;
             graph.forEachOutgoing(current, (to, weight) -> {
                 inDegree[to]--;
                 if (inDegree[to] == 0) {
@@ -47,5 +47,6 @@ public class TopSort {
                 }
             });
         }
+        return order;
      }
 }
