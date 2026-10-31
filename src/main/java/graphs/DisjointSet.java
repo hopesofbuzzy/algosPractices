@@ -4,6 +4,7 @@ public class DisjointSet {
 
     private final int[] parent;
     private final int[] size;
+    private final long[] weight;
 
     public DisjointSet(int v) {
         this.parent = new int[v];
@@ -12,9 +13,10 @@ public class DisjointSet {
             this.parent[vertex] = vertex;
             this.size[vertex] = 1;
         }
+        this.weight = new long[v];
     }
 
-    public boolean union(int first, int second) {
+    public boolean union(int first, int second, long weight) {
         int firstRoot = find(first);
         int secondRoot = find(second);
 
@@ -27,7 +29,12 @@ public class DisjointSet {
 
         parent[secondRoot] = firstRoot;
         size[firstRoot] += size[secondRoot];
+        this.weight[firstRoot] += weight;
         return true;
+    }
+
+    public long getVertexWeight(int vertex) {
+        return weight[vertex];
     }
 
     public int find(int vertex) {

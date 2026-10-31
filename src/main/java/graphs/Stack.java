@@ -3,15 +3,15 @@ package graphs;
 public class Stack {
     private Node top;
 
-    boolean isEmpty() {
+    public boolean isEmpty() {
         return top == null;
     }
 
-    void push(int val) {
+    public void push(int val) {
         top = new Node(val, top);
     }
 
-    int pop() {
+    public int pop() {
         if (top == null) {
             throw new IllegalStateException("stack is empty");
         }
