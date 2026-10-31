@@ -10,6 +10,7 @@ public class Task3 {
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
         int m = scanner.nextInt();
+        scanner.nextLine();
         EdgeListGraph graph = new EdgeListGraph(n);
         for (int i = 0; i < m; i++) {
             graph.addEdge(scanner.nextInt(), scanner.nextInt(), scanner.nextInt());

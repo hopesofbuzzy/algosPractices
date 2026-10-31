@@ -11,6 +11,7 @@ public class Task2 {
         int n = scanner.nextInt();
         int m = scanner.nextInt();
         int s = scanner.nextInt();
+        scanner.nextLine();
 
         AdjacencyListGraph graph = new AdjacencyListGraph(n, true);
         for (int i = 0; i < m; i++) {

@@ -26,6 +26,9 @@ public class AdjacencyListGraph implements Graph {
 
     @Override
     public void addEdge(int from, int to, long weight) {
+        if (from >= vertexCount() || to >= vertexCount()) {
+            throw new IllegalStateException("Вне индекса! " + from + " -> " + to);
+        }
         this.heads[from] = new AdjacencyListNode(to, weight, this.heads[from]);
         if (!directed) {
             this.heads[to] = new AdjacencyListNode(from, weight, this.heads[to]);
